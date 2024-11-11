@@ -16,9 +16,6 @@ def download_collection_json(url, outfile):
         output = json.dumps(items["content"], sort_keys = True, indent = 4)
         file.write(output)
 
-def download_libraries_json():
-    download_collection_json("https://www.loc.gov/free-to-use/libraries/", "./response.json")
-
 def create_csv_list_from_json(infile, outfile):
     with open(infile, mode='r', encoding="utf-8") as response:
         content = json.load(response)
@@ -35,6 +32,11 @@ def create_csv_list_from_json(infile, outfile):
             title = item["title"] if "title" in item else "NO_TITLE"
             output.writerow([image, link, title])
 
-def create_libraries_csv():
-    create_csv_list_from_json("./response.json", "./ftu-libraries-set-list.csv")
+def extract_libraries_list():
+    libraries_url = "https://www.loc.gov/free-to-use/libraries/"
+    json_filename = "./ftu-libraries-set-info.json"
+    csv_filename = "./ftu-libraries-set-list.csv"
+    download_collection_json(libraries_url, json_filename)
+    create_csv_list_from_json(json_filename, csv_filename)
 
+extract_libraries_list()
