@@ -1,0 +1,334 @@
+{
+    "active": true,
+    "description": [
+        "<p>People create libraries in all shapes and sizes to serve their local communities. This set of free to use images represents buildings in almost all 50 states of the United States.</p>\n<p>Browse more\u00a0<a href=\"/free-to-use/\">content that is free to use and reuse</a>. </p>\n"
+    ],
+    "disable_navigation": true,
+    "image_url": [
+        "/static/portals/free-to-use/public-domain/libraries/libraries-1.jpg"
+    ],
+    "link": "https://www.loc.gov/free-to-use/libraries/",
+    "markup": "{% load filters %}\n<section class='public-domain-abstract'>\n    <p>{{content.abstract|safe}}</p>\n</section>\n<style>\n    .public-domain-set > li {\n        padding-bottom: 10px;\n    }\n</style>\n<section class=\"public-domain\"><a id=\"reuse\" name=\"reuse\"></a>\n    <ul class='search-results grid-view public-domain-results public-domain-set'>\n        {% for item in content.set.items %}\n            <li>\n                <figure>\n                    <a href=\"{{item.link}}\">\n                        <img alt=\"{% if item.alt %}{{item.alt}}{% endif %}\"\n                            data-src=\"{{item.image}}\"\n                            src=\"{{item.image}}\">\n                        <figcaption>{{item.title|safe}}</figcaption>\n                    </a>\n                </figure>\n            </li>\n        {% endfor %}\n    </ul>\n</section>\n\n<script>\n    $(document).ready(function() {\n        // public domain\n        var $grid = $('.public-domain .grid-view').isotope({\n            {% if content.set.layout == \"aligned\" %}\n            // For items that needs to be ordered\n            layoutMode: 'fitRows',\n            {% endif %}\n            itemSelector: '.public-domain .grid-view > li',\n            percentPosition: true\n        });\n\n        $grid.imagesLoaded().progress( function() {\n            $grid.isotope('layout');\n        });\n\n        // UX Interactions - Programs, Top Searches, Trending, Your Library, Exhibitions, Events, News, Public Domain\n        if (window['loc_ux_tracking'] != undefined){\n            $('.public-domain-results.search-results li figure a').click(function() {\n                var listItem = $(this).closest('li');\n                var index = $(listItem).parent().children().index(listItem) + 1;\n                var label = '[' + index + ']:' + $(this).closest('.public-domain-results li').contents().text().trim();\n                loc_ux_tracking.trackUserInteractionEvent($(this), 'Public Domain', 'Click', label);\n            });\n\n        }\n\n    });\n</script>\n",
+    "meta_description": "People create libraries in all shapes and sizes to serve their local communities. This set of free to use images represents buildings in almost all 50 states of the United States.",
+    "pagination": "44 of 94",
+    "partof": [],
+    "set": {
+        "items": [
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-1.jpg",
+                "link": "/resource/cph.3f05183/",
+                "title": "For greater knowledge, on more subjects, use your library more often. Illinois WPA Arts Project, 1936-1941. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-2.jpg",
+                "link": "/resource/highsm.20336/",
+                "title": "Noyes Library for Young Children. Kensington, Maryland. Photo by Carol M. Highsmith,  2011. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-3.jpg",
+                "link": "/resource/fsa.8d24709/",
+                "title": "Bethune-Cookman College. Students in the library reading room, Daytona Beach, Florida. Gordon Parks, 1943. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-4.jpg",
+                "link": "/resource/highsm.36052/",
+                "title": "Public library in Antonito,  Colorado, near the New Mexico border. Photo by Carol M. Highsmith, 2015. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-5.jpg",
+                "link": "/resource/highsm.51772/",
+                "title": "Library and Innovation Center in New Castle, Delaware, defines itself as \"a community learning and resource hub.\" Photo by Carol M. Highsmith, 2018. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-6.jpg",
+                "link": "/resource/cph.3b43255/",
+                "title": "Silence. Lithograph by Mabel Dwight, 1939. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-7.jpg",
+                "link": "/resource/highsm.20483/",
+                "title": "Patterson Park Branch of the Enoch Pratt Free Library System. Photo by Carol M. Highsmith, 2011. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-8.jpg",
+                "link": "/resource/highsm.29207/",
+                "title": "The easily identifiable J. Erik Jonsson Central Library, Dallas, Texas. Photo by Carol M. Highsmith, 2014. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-9.jpg",
+                "link": "/resource/fsa.8b32222/",
+                "title": "Public library in the southwestern section of Mississippi, in the piney woods. Photo by Dorothea Lange, 1937. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-10.jpg",
+                "link": "/resource/highsm.64003/",
+                "title": "\"Bookmobile\" bus belonging to the Perry County Public Library in Hazard, Kentucky. Photo by Carol M. Highsmith, 2020. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-11.jpg",
+                "link": "/resource/ppmsca.15412/",
+                "title": "Creating the first fully developed children's department in 1899 is one of the historic milestones claimed by the Pittsburgh, Pennsylvania, Carnegie Library. Photo, 1900-1905. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-12.jpg",
+                "link": "/resource/highsm.49335/",
+                "title": "Even a sculpted gila monster appears to be into reading near a Little Free Library in the Dunbar Spring neighborhood of Tucson, Arizona. Photo by Carol M. Highsmith, 2018. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-13.jpg",
+                "link": "/resource/highsm.20497/",
+                "title": "Handley Library, Winchester, Virginia. Photo by Carol M. Highsmith, 2011. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-14.jpg",
+                "link": "/resource/npcc.28724/",
+                "title": "Reading room for the blind, Library of Congress, Washington, DC. By National Photo Co., 1919 or 1920. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-15.jpg",
+                "link": "/resource/ds.06560/",
+                "title": "Main public library building, Detroit, Michigan. Cass Gilbert, architect. Postcard by Albertype Co., 1921-1930. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-16.jpg",
+                "link": "/resource/hhh.hi0135.photos",
+                "title": "Mother Marianne Library, Moloka'i Island, Kalaupapa, Kalawao County, Hawaii. Photo by Jack Boucher, 1991. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-17.jpg",
+                "link": "/resource/cph.3f05168/",
+                "title": "Curb service, 10,000 current books, convenient, free, time saving : Chicago Public Library, Randolph St. corridor. Illinois WPA Art Project, 1936-1941. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-18.jpg",
+                "link": "/resource/ppmsca.15375/",
+                "title": "Reading Room, Billings Memorial Library, University of Vermont, Burlington, Vermont. H.H. Richardson, architect. Photo, approx. 1890. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-19.jpg",
+                "link": "/resource/highsm.53335/",
+                "title": "Library. Herbert Hoover Federal Building in Washington, D.C. Photo by Carol M. Highsmith, 2018. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-20.jpg",
+                "link": "/resource/hhh.ks0072.photos/?sp=2",
+                "title": "Paola Free Library, Paola, Kansas. Photo by Dan Collins, 1984. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-21.jpg",
+                "link": "/resource/highsm.34640/",
+                "title": "The Guernsey Branch Library, in Guernsey, Wyoming. Photo by Carol M. Highsmith, 2015. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-22.jpg",
+                "link": "/resource/ppmsca.17588/",
+                "title": "Library of Congress when it was located in the U.S. Capitol. Copy of watercolor by William Bengough, 1897. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-23.jpg",
+                "link": "/resource/ppmsca.18016/",
+                "title": "Library of Congress, Washington. By Detroit Publishing Co., 1902. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-24.jpg",
+                "link": "/resource/hhh.me0057.photos/?sp=1",
+                "title": "Hubbard Free Library, Hallowell, Kennebec County, Maine. Copy of photo from approx. 1880. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-25.jpg",
+                "link": "/resource/highsm.41101/",
+                "title": "Modernist stairway and bookstacks inside the Allen County Public Library, Fort Wayne, Indiana. Photo by Carol M. Highsmith, 2016. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-26.jpg",
+                "link": "/resource/det.4a17925/",
+                "title": "Cossitt Library, Memphis, Tennessee. Photo by Detroit Publishing Co., 1906. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-27.jpg",
+                "link": "/resource/ppmsca.15426/",
+                "title": "Main entrance. Boston Public Library. Massachusetts. 1895. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-28.jpg",
+                "link": "/resource/ppmscd.00084/",
+                "title": "Interior view of library reading room with male and female students sitting at tables, reading, at the Tuskegee Institute, Alabama. Photo by Frances B. Johnston, approx. 1902. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-29.jpg",
+                "link": "/resource/highsm.18384/",
+                "title": "George Peabody Library, Johns Hopkins University, Baltimore, Maryland. Photo by Carol M.  Highsmith, 2012. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-30.jpg",
+                "link": "/resource/g3851e.ct006252/",
+                "title": "Map of Libraries, Washington, D.C. Library of Congress, 1926. Geography & Map Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-31.jpg",
+                "link": "/resource/ppmsca.35590/",
+                "title": "\"Open Free to All\" is carved over the door of the Carnegie Public Library in Taunton, Massachusetts. Drawing by Albert R. Ross, approx. 1903. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-32.jpg",
+                "link": "/resource/hhh.il0998.sheet/?sp=1",
+                "title": "Paxton Carnegie Library, Paxton, Illinois. Drawing, 2011. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-33.jpg",
+                "link": "/resource/hhh.ok0012.sheet/?sp=8&q=hhh.ok0012",
+                "title": "Carnegie Library, Guthrie, Oklahoma. Cross section drawing, 1973. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-34.jpg",
+                "link": "/resource/hhh.sc0767.photos/?sp=1",
+                "title": "Carnegie Free Library, Union, South Carolina. Photo by Jack Boucher, 1987. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-35.jpg",
+                "link": "/resource/hhh.nj0089.photos/?sp=4",
+                "title": "Princeton University, Library, Princeton, New Jersey. Photo by Jack Boucher, 1964. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-36.jpg",
+                "link": "/resource/highsm.31350/",
+                "title": "Public library in Shepherdstown, West Virginia. Photo by Carol M. Highsmith, 2015. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-37.jpg",
+                "link": "/resource/hhh.ri0071.photos/?sp=8",
+                "title": "Redwood Library, Newport, Rhode Island. Photo by Cervin Robinson, 1970. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-38.jpg",
+                "link": "/resource/highsm.48241/",
+                "title": "Cook Memorial Library, the public library of Tamworth, New Hampshire. Photo by Carol M. Highsmith, 2017. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-39.jpg",
+                "link": "/resource/det.4a23603/",
+                "title": "Little Rock Public Library, Little Rock, Arkansas. Photo by Detroit Publishing Co., approx. 1910. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-40.jpg",
+                "link": "/resource/highsm.04362/",
+                "title": "Public Library, Salt Lake City, Utah. Photo by Carol M. Highsmith, 2007. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-41.jpg",
+                "link": "/resource/hhh.dc0121.photos/?sp=24",
+                "title": "Riggs Library, Georgetown University, Washington, DC. Historic American Buildings Survey. 1969. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-42.jpg",
+                "link": "/resource/ppbd.00600/",
+                "title": "The People's Library, set up by the Occupy Wall Street protest movement in Zuccotti Park, New York City. Photo by Teri Sierra, 2011. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-43.jpg",
+                "link": "/resource/fsa.8b14169/",
+                "title": "Newspaper reading room of public library. Omaha, Nebraska. Photo by John Vachon, 1938. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-44.jpg",
+                "link": "/resource/highsm.32720/",
+                "title": "Dusk view, Rawlings Public Library, Pueblo, Colorado. Photo by Carol M. Highsmith, 2015. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-45.jpg",
+                "link": "/resource/fsa.8c22565/",
+                "title": "Library tent at the Farm Security Administration mobile camp for migratory farm workers, Odell, Oregon. Photo by Russell Lee, 1941. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-46.jpg",
+                "link": "/resource/mrg.00785/",
+                "title": "Parmly Billings Library (Western Heritage Center), Billings, Montana. Photo by John Margolies, 2004. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-47.jpg",
+                "link": "/resource/hhh.ak0345.photos/?sp=2",
+                "title": "Juneau Public Library, Juneau, Alaska. Photo by Jet Lowe, 1991. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-48.jpg",
+                "link": "/resource/highsm.43863/",
+                "title": "Historic library in the North Carolina Capitol in Raleigh. Photo by Carol M. Highsmith, 2017. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-49.jpg",
+                "link": "/resource/highsm.42123/",
+                "title": "An upright polar bear in Cincinnati, Ohio, not at the zoo, since it's stuffed, but at Cincinnati's main library. Photo by Carol M. Highsmith, 2016. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-50.jpg",
+                "link": "/resource/cph.3c18157/",
+                "title": "Carnegie Library, Sheldon, Iowa. 1909. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-51.jpg",
+                "link": "/resource/ds.06507/",
+                "title": "Buffalo, New York, Public library. Children's room. Photo by Levin C. Handy, approx. 1900. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-52.jpg",
+                "link": "/resource/highsm.24333/",
+                "title": "Tower of the Central Library, Los Angeles, California. Photo by Carol M. Highsmith, 2013. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-53.jpg",
+                "link": "/resource/mrg.00788/",
+                "title": "Library, Dickason Street, Columbus, Wisconsin. Photo by John Margolies, 2008. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-54.jpg",
+                "link": "/resource/highsm.20216/",
+                "title": "Norfolk Library, Norfolk, Connecticut. Photo by Carol M. Highsmith, 2011. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-55.jpg",
+                "link": "/resource/cph.3b41963/",
+                "title": "Carnegie Library, Cordele, Georgia. Photo, approx. 1916. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-56.jpg",
+                "link": "/resource/mrg.00432/",
+                "title": "Nampa Public Library, Nampa, Idaho. Photo by John Margolies, 2004. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-57.jpg",
+                "link": "/resource/cph.3b39859/",
+                "title": "Louisiana Industrial Institute and College Library with students reading, Ruston, Louisiana. Photo, 1900-1920. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-58.jpg",
+                "link": "/resource/highsm.60215/",
+                "title": "The public library, with a creative book-themed facade, in Houston, Minnesota. Photo by Carol Highsmith, 2019. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-59.jpg",
+                "link": "/resource/ppmsca.15419/",
+                "title": "Book room, Carnegie library, St. Joseph, Missouri. Photo, 1900-1905. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-60.jpg",
+                "link": "/resource/highsm.50410/",
+                "title": "You wouldn't guess that this is a public library, but it is, in Skynomish, Washington. Photo by Carol M. Highsmith, 2018. Prints & Photographs Division\n"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-61.jpg",
+                "link": "/resource/hhh.nv0134.photos",
+                "title": "Library (C425), looking SW - Hawthorne Naval Ammunition Depot, Babbitt Housing Area, Hawthorne, Nevada. Photo by Joe C. Freeman, 1992. Historic American Buildings Survey. Prints & Photographs Division"
+            },
+            {
+                "image": "/static/portals/free-to-use/public-domain/libraries/libraries-62.jpg",
+                "link": "/resource/highsm.18402",
+                "title": "Interior of the Hutzler Reading room located in Gilman Hall, Johns Hopkins University, Baltimore, Maryland. Photo by Carol M. Highsmith, 2012. Prints & Photographs Division"
+            }
+        ],
+        "layout": "unaligned"
+    },
+    "slug": "libraries",
+    "status": "production",
+    "title": "Free to Use and Reuse: Libraries",
+    "url": "https://www.loc.gov/free-to-use/libraries/"
+}
