@@ -42,8 +42,6 @@ def extract_libraries_list():
     download_collection_json(libraries_url, json_filename)
     create_csv_list_from_json(json_filename, csv_filename)
 
-extract_libraries_list()
-
 def retrieve_item_metadata(infile):
     base_url = "https://www.loc.gov"
     base_json_path = "./item-metadata/"
@@ -86,4 +84,6 @@ def retrieve_item_files(infile):
                     for chunk in response:
                         item_file.write(chunk)
 
+extract_libraries_list()
+retrieve_item_metadata(csv_filename)
 retrieve_item_files(csv_filename)
