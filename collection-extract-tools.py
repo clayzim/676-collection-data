@@ -46,7 +46,6 @@ extract_libraries_list()
 
 def retrieve_item_metadata(infile):
     base_url = "https://www.loc.gov"
-    base_image_path = "./item-files/"
     base_json_path = "./item-metadata/"
     error_filename = "errors.txt"
     with open(infile, mode='r', encoding="utf-8") as csv_file:
@@ -69,4 +68,22 @@ def retrieve_item_metadata(infile):
                     errors.write(f"Index {index}: No JSON\n")
 
 
-retrieve_item_metadata(csv_filename)
+def retrieve_item_files(infile):
+    base_url = "https://www.loc.gov"
+    base_image_path = "./item-files/"
+    error_filename = "image-errors.txt"
+    with open(infile, mode='r', encoding="utf-8") as csv_file:
+        items = csv.DictReader(csv_file)
+        with open(error_filename, mode='w', encoding="utf-8") as errors:
+            for index, item in enumerate(items):
+                url = base_url + item["image"]
+                identifier = item["link"].split('/')[2]
+                response = requests.get(url)
+                if response.status_code != 200:
+                    errors.write(f"Index {index}: No HTTP OK\n")
+                outfile = base_image_path + identifier + ".jpg"
+                with open(outfile, mode="wb") as item_file:
+                    for chunk in response:
+                        item_file.write(chunk)
+
+retrieve_item_files(csv_filename)
