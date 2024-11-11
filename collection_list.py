@@ -9,13 +9,15 @@ def get_collection_list(url):
     else:
         raise ValueError("Didn't get an HTTP OK")
 
-def download_libraries_json():
-    libraries = "https://www.loc.gov/free-to-use/libraries/"
-    items_json = get_collection_list(libraries)
+def download_collection_json(url, outfile):
+    items_json = get_collection_list(url)
     items = json.loads(items_json)
-    with open("./response.json", mode='w', encoding="utf-8") as file:
+    with open(outfile, mode='w', encoding="utf-8") as file:
         output = json.dumps(items["content"], sort_keys = True, indent = 4)
         file.write(output)
+
+def download_libraries_json():
+    download_collection_json("https://www.loc.gov/free-to-use/libraries/", "./response.json")
 
 def create_csv_list_from_json(infile, outfile):
     with open(infile, mode='r', encoding="utf-8") as response:
@@ -33,5 +35,6 @@ def create_csv_list_from_json(infile, outfile):
             title = item["title"] if "title" in item else "NO_TITLE"
             output.writerow([image, link, title])
 
-def create_csv_list():
+def create_libraries_csv():
     create_csv_list_from_json("./response.json", "./ftu-libraries-set-list.csv")
+
